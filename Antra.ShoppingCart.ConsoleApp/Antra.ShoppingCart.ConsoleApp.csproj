@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antra.ShoppingCart.Data.Model\Antra.ShoppingCart.Data.Model.csproj" />
+    <ProjectReference Include="..\Antra.ShoppingCart.Data.Repository\Antra.ShoppingCart.Data.Repository.csproj" />
+    <ProjectReference Include="..\Antra.ShoppingCart.Services\Antra.ShoppingCart.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

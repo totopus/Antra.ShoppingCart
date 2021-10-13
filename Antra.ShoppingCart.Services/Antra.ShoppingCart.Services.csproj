@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antra.ShoppingCart.Data.Model\Antra.ShoppingCart.Data.Model.csproj" />
+    <ProjectReference Include="..\Antra.ShoppingCart.Data.Repository\Antra.ShoppingCart.Data.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
