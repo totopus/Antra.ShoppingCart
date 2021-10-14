@@ -33,21 +33,7 @@ namespace Antra.ShoppingCart.Services
             }
 
         }
-        public decimal GetTotal()
-        {
-       
-            var orderDetails = orderDetailsRepository.GetAll().ToList();
-            var query = (from n in orderDetails
-                         
-                             group n by n.OrderId into g
-                            orderby g.Key descending
-                             select new { Total = g.Sum(f => f.Product.Price * f.Quantity) }).First();
-            var max = query.Total;
-            return Convert.ToDecimal(max);
-        }
-
         
-
 
     }
 }

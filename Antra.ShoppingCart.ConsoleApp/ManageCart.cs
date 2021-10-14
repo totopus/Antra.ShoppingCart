@@ -9,12 +9,13 @@ namespace Antra.ShoppingCart.ConsoleApp
 {
     class ManageCart
     {
+        OfferService offerService;
         CartService cartService;
         
         public ManageCart()
         {
             cartService = new CartService();
-
+            offerService = new OfferService();
         }
 
         public void AddToCart()
@@ -48,9 +49,27 @@ namespace Antra.ShoppingCart.ConsoleApp
 
         public void PrintTotal()
         {
-            decimal total = cartService.GetTotal();
-            Console.WriteLine();
-            Console.WriteLine($"Your Total is {total} !",total);
+            decimal discountTotal, normalTotal, totalDifference;
+            Console.WriteLine("Are You A Member With Us? (Y/N) Enter Y For Exclusive Discount!");
+            string s = Console.ReadLine();
+            discountTotal = offerService.GetDiscount();
+            normalTotal = offerService.GetTotal();
+            if (s == "Y")
+            {
+               totalDifference = normalTotal - discountTotal;
+               Console.WriteLine();
+               Console.WriteLine($"Your Total is {discountTotal} !", discountTotal);
+               Console.WriteLine($"You Saved {totalDifference} !", totalDifference);
+            }
+            else
+            {
+
+                Console.WriteLine();
+                Console.WriteLine($"Your Total is {normalTotal} !", normalTotal);
+                
+            }
+            
+           
          }
         public void Run()
         {

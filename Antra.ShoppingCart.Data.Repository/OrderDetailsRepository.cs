@@ -23,7 +23,7 @@ namespace Antra.ShoppingCart.Data.Repository
 
         public IEnumerable<OrderDetails> GetAll()
         {
-            string query = @"select od.orderid,od.quantity,p.Id,p.productname,p.price from orderdetails od
+            string query = @"select od.orderid,od.quantity,od.productId,p.Id,p.productname,p.price from orderdetails od
                         left join product p on p.Id=od.ProductId";
             using (IDbConnection conn = db.GetConnection())
             {
